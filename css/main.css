@@ -191,6 +191,23 @@ textarea::placeholder {
   padding: 20px 0px;
 }
 
+[type='submit']{
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 30px;
+  border: 2px solid #161616;
+  border-radius: 30px 30px;
+  background-color: #dee3f5;
+  width: 100px;
+  height: 50px;
+  transition: all 0.3s ease-in-out;
+}
+
+[type='submit']:hover{
+  border: 2px solid #668cf6;
+  background-color: #668cf6;
+}
+
 @media (max-width: 1200px) {
   .projects {
     height: max-content;

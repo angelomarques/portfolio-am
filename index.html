@@ -46,7 +46,10 @@
                   fill="#2B3760"
                 />
               </a>
-              <a href="#" id="linkedin-icon">
+              <a
+                href="https://www.linkedin.com/in/angelo-marques-87265a196"
+                id="linkedin-icon"
+              >
                 <circle id="circle_2" cx="378" cy="213" r="42" fill="#EAEEFF" />
                 <path
                   id="Vector_2"
@@ -141,7 +144,7 @@
                   fill="#EAEEFF"
                 />
               </g>
-              <a href="#" id="github-icon">
+              <a href="https://github.com/angelomarques" id="github-icon">
                 <circle
                   id="Ellipse 2"
                   cx="233"
@@ -168,17 +171,17 @@
         <div class="projects-container">
           <div class="project-box">
             <a href="https://codepen.io/marquesangelo/full/KKgVmrG"
-            ><img
-              src="./images/tributepage-project.png"
-              alt="tribute page print"
-          /></a>
+              ><img
+                src="./images/tributepage-project.png"
+                alt="tribute page print"
+            /></a>
           </div>
           <div class="project-box">
             <a href="https://codepen.io/marquesangelo/full/QWKpJbw"
-            ><img
-              src="./images/calculator-project.png"
-              alt="calculator JS print"
-          /></a>
+              ><img
+                src="./images/calculator-project.png"
+                alt="calculator JS print"
+            /></a>
           </div>
           <div class="project-box"></div>
           <div class="project-box"></div>
@@ -188,7 +191,12 @@
       </section>
       <section class="page contact" id="contact">
         <h2>Contact</h2>
-        <form action="#">
+        <form
+          action="contact-form-portfolio"
+          method="POST"
+          enctype="multipart/form-data"
+          name="contact_form_portfolio"
+        >
           <div class="inp-area">
             <input type="text" name="name" id="name-inp" required />
             <label for="name"><span>Name</span></label>
@@ -207,6 +215,7 @@
               required
             ></textarea>
           </div>
+          <input type="submit" name="submit" id="submit-btn" value="Submit" />
         </form>
       </section>
       <footer>
