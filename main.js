@@ -3,10 +3,22 @@ const hambRect1 = document.querySelector(".rect1");
 const hambRect2 = document.querySelector(".rect2");
 const hambRect3 = document.querySelector(".rect3");
 const menu = document.querySelector(".menu");
+const menuBtns = document.querySelectorAll('.menu-active a');
 
 const menuActive = document.querySelector(".menu-active");
 const logoTitle = document.querySelector(".nav-bar h3");
 const hambRect = document.querySelectorAll(".hamb-rect");
+
+menuBtns.forEach((elem, i) => {
+  elem.addEventListener("click", () => {
+    menuActive.style.transform = "translateY(-100%)";
+    logoTitle.style.color = "#dee3f5";
+    hambRect.forEach((e) => (e.style.backgroundColor = "#dee3f5"));
+    hambRect1.style.transform = "";
+    hambRect3.style.transform = "";
+    hambRect2.style.opacity = "1";
+  })
+})
 
 menu.addEventListener("click", () => {
   hambRect1.style.transform = "translateY(200%) rotate(45deg)";
