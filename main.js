@@ -69,3 +69,30 @@ let typingFunc = () => {
 };
 
 gen();
+
+
+//Resize the header when the cellphone rotates
+const header = document.querySelector('header');
+const homePage = document.querySelector('.home');
+
+if(window.screen.orientation.angle == 90) {
+  header.style.height = '180vh';
+  homePage.style.height = '180vh';
+  homePage.style.paddingTop = '30%';
+}
+if(window.screen.orientation.angle == 0) {
+  header.style.height = '100vh';
+  homePage.style.height = '100vh';
+}
+
+window.addEventListener('orientationchange', (e) => {
+  if(e.target.screen.orientation.angle == 90) {
+    header.style.height = '180vh';
+    homePage.style.height = '180vh';
+    homePage.style.paddingTop = '30%';
+  }
+  if(e.target.screen.orientation.angle == 0) {
+    header.style.height = '100vh';
+    homePage.style.height = '100vh';
+  }
+})

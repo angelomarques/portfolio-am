@@ -213,6 +213,9 @@ textarea::placeholder {
   .text-content h1 {
     font-size: 15px;
   }
+  .home{
+    height: 100vh;
+  }
   .home svg {
     width: 245px;
     height: 315px;
