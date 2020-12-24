@@ -45,13 +45,13 @@ footer p {
 header {
   background: radial-gradient(#2b3760, #161616);
   height: 100vh;
+  width: 100%;
 }
 
 main {
   position: relative;
   left: 0;
   top: -250px;
-  width: 100%;
 }
 
 textarea,
@@ -74,14 +74,15 @@ textarea::placeholder {
 }
 
 .home {
-  padding-top: 10vh;
+  padding-top: 0;
   height: 90vh;
+  width: 100%;
 }
 
 .home svg {
   width: 345px;
   height: 415px;
-  margin: auto;
+  margin: 30px auto;
 }
 
 .home h1 {
@@ -189,10 +190,9 @@ textarea::placeholder {
   display: flex;
   width: 90%;
   align-items: center;
-  padding-top: 30px;
   padding-left: 10%;
   justify-content: flex-start;
-  padding: 20px 0px;
+  padding: 30px 0px;
 }
 
 [type="submit"] {
@@ -224,6 +224,7 @@ textarea::placeholder {
   }
   .text-content h1 {
     font-size: 22px;
+    margin-top: 20%;
   }
   .menu-active {
     padding: 50px 30px;
@@ -232,19 +233,24 @@ textarea::placeholder {
 
 @media (max-width: 450px) {
   .text-content h1 {
-    font-size: 15px;
+    font-size: 20px;
   }
   .home {
-    height: 100vh;
+    height: 90vh;
   }
   .home svg {
-    width: 245px;
-    height: 315px;
+    margin-top: 90px;
+    width: 295px;
+    height: 415px;
   }
   .project-box {
     width: 260px;
     height: 156px;
     align-self: center;
+    border-radius: 30px 30px;
+  }
+  .project-box img {
+    border-radius: 30px 30px;
   }
   .inp-area {
     margin: 30px auto;
@@ -263,5 +269,11 @@ textarea::placeholder {
   }
   .project-box {
     margin: 10px auto;
+  }
+}
+
+@media (max-width: 388px) {
+  .text-content h1{
+    font-size: 15px;
   }
 }

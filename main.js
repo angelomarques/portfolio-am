@@ -93,8 +93,9 @@ if(window.screen.orientation.angle == 90) {
   homePage.style.paddingTop = '30%';
 }
 if(window.screen.orientation.angle == 0) {
+  homePage.style.paddingTop = '0';
   header.style.height = '100vh';
-  homePage.style.height = '100vh';
+  homePage.style.height = '90vh';
 }
 
 window.addEventListener('orientationchange', (e) => {
@@ -104,6 +105,7 @@ window.addEventListener('orientationchange', (e) => {
     homePage.style.paddingTop = '30%';
   }
   if(e.target.screen.orientation.angle == 0) {
+    homePage.style.paddingTop = '0';
     header.style.height = '100vh';
     homePage.style.height = '100vh';
   }
