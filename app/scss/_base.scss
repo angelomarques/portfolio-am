@@ -1,0 +1,99 @@
+//colors
+$grayish: #484e5a;
+$darkGray: #3b3e4e;
+$lightColor: #f7f9ff;
+$darkColor: #1c222c;
+$lightBlue: rgb(0, 149, 250);
+
+//font sizes
+$font-lg: 1.2rem;
+
+//breakpoints
+$breakpoints-up: (
+  "medium": "40em",
+  "large": "64em",
+  "xlarge": "87.5em",
+);
+
+// 639px, 1023px, 1399px
+$breakpoints-down: (
+  "xsmall": "320px",
+  "small": "39.9375em",
+  "medium": "63.9375em",
+  "large": "87.4375em",
+);
+
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}
+
+//mixins
+@mixin justify($val) {
+  display: flex;
+  align-items: center;
+  justify-content: $val;
+}
+
+//animations
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  display: block !important;
+  opacity: 0;
+  animation: fade-in 300ms ease-in-out forwards;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.fade-out {
+  display: block !important;
+  opacity: 1;
+  animation: fade-out 300ms ease-in-out forwards;
+}
+
+@keyframes fade-elems {
+  from {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@for $i from 1 through 5 {
+  .fade-in {
+    > nav {
+      > .nav-link:nth-child(#{$i}) {
+        opacity: 0;
+        animation: fade-elems 300ms ease-in-out (100ms * $i) forwards;
+      }
+    }
+  }
+}

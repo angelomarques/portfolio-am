@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  @include breakpoint-down(medium) {
+    font-size: 93.75%;
+  }
+
+  @include breakpoint-down(small) {
+    font-size: 87.5%;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  overflow-x: hidden;
+  background: linear-gradient(115deg, $darkColor, $darkGray);
+  font-size: 1rem;
+}
+
+body,
+input,
+textarea {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+}
+
+button {
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+
+button:disabled{
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+textarea {
+  resize: none;
+  overflow: -moz-hidden-unscrollable;
+
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+}
+
+.container {
+  padding: 1.5rem 2.8rem;
+}
+
+.section__title {
+  font-size: 7.5rem;
+  color: rgba(0, 149, 250, 0.3);
+  padding-bottom: 0;
+
+  @include breakpoint-down(small) {
+    font-size: 4rem;
+  }
+}
+
+.primary-btn {
+  border: 2px solid $lightBlue;
+  border-radius: 10px;
+  background: $lightBlue;
+  transition: all 200ms ease-in-out;
+
+  @include breakpoint-up(large) {
+    &:not(:disabled):hover {
+      filter: brightness(0.85);
+    }
+  }
+
+  > span {
+    color: $lightColor;
+  }
+}
+
+.secondary-btn {
+  border: 2px solid $lightBlue;
+  border-radius: 10px;
+  transition: all 200ms ease-in-out;
+
+  @include breakpoint-up(large) {
+    &:hover {
+      background: $lightBlue;
+
+      > span {
+        color: $lightColor;
+      }
+    }
+  }
+
+  > span {
+    transition: all 200ms ease-in-out;
+    color: $lightBlue;
+  }
+}

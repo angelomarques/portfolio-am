@@ -1,0 +1,54 @@
+.hero {
+  @include justify(space-between);
+  margin-top: 4rem;
+  color: $lightColor;
+
+  @include breakpoint-down(medium) {
+    flex-direction: column;
+    align-items: start;
+
+    &__content {
+      padding-bottom: 6rem;
+    }
+  }
+
+  &__content {
+    h1 {
+      font-size: 3.125rem;
+      margin-bottom: 1.25rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin-bottom: 3.75rem;
+      opacity: 0.7;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        background-image: url("/images/smile-emoji.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 1.25rem;
+        height: 1.25rem;
+        bottom: 5px;
+        margin-left: 5px;
+      }
+    }
+  }
+
+  &__cta {
+    width: 12.5rem;
+    height: 3.125rem;
+    font-size: 1.5rem;
+
+    @include justify(center)
+  }
+
+  &__image {
+    > img {
+      width: 100%;
+    }
+  }
+}

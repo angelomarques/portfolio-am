@@ -1,0 +1,127 @@
+.header {
+  color: $lightColor;
+
+  &__top {
+    @include justify(space-between);
+  }
+
+  &__logo {
+    width: fit-content;
+    height: 2.25rem;
+    @include justify(space-between);
+
+    > img {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    > h1 {
+      font-size: $font-lg;
+      margin-left: 1rem;
+
+      @include breakpoint-down(small) {
+        font-size: 0.9rem;
+        margin-left: 0.3rem;
+      }
+    }
+  }
+
+  &__hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+
+    @include breakpoint-up(large) {
+      display: none;
+    }
+
+    > span {
+      display: block;
+      width: 30px;
+      height: 3px;
+      background: #ffffff;
+      transition: all 300ms ease-in-out;
+    }
+
+    &.active {
+      > span {
+        transform-origin: center center;
+
+        &:first-child {
+          transform: translateY(8.5px) rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:last-child {
+          transform: translateY(-8.5px) rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  &__navbar {
+    width: 27rem;
+    height: 2.5rem;
+    display: block;
+    font-size: $font-lg;
+    @include justify(space-between);
+
+    @include breakpoint-down(medium) {
+      display: none;
+    }
+
+    > .btn {
+      @include justify(center);
+      width: 9rem;
+      height: 2.5rem;
+      font-size: $font-lg;
+    }
+
+    a {
+      color: $lightColor;
+
+      &:hover {
+        color: $lightBlue;
+      }
+    }
+  }
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  top: 5.5rem;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.05);
+  //(this let the background blurry)
+  backdrop-filter: blur(2px);
+  width: 100%;
+
+  &__navbar {
+    width: 18rem;
+    height: 15rem;
+    margin: auto;
+    margin-top: 2rem;
+    background: $lightColor;
+    @include justify(space-between);
+    flex-direction: column;
+    border-radius: 15px;
+
+    > a {
+      color: $darkColor;
+    }
+
+    > .btn {
+      @include justify(center);
+      width: 9rem;
+      height: 2.5rem;
+      font-size: $font-lg;
+    }
+  }
+}
