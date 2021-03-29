@@ -20,13 +20,12 @@ a {
 
 body {
   overflow-x: hidden;
-  background: linear-gradient(115deg, $darkColor, $darkGray);
   font-size: 1rem;
 }
 
 body,
 input,
-textarea {
+textarea, button {
   font-family: "Montserrat", sans-serif;
 }
 
@@ -57,13 +56,53 @@ textarea {
 }
 
 .container {
-  padding: 1.5rem 2.8rem;
+  padding: 2.75rem 6rem;
+
+  @include breakpoint-down(medium){
+    padding: 2.3rem 1.6rem;
+  }
 }
 
+
+//color for the "font awesome" icons
+.fa-html5 {
+  color: #e44d26;
+}
+
+.fa-css3-alt {
+  color: #0277bd;
+}
+
+.fa-js-square {
+  color: #f7df1e;
+}
+
+.fa-react {
+  color: #61dafb;
+}
+
+.fa-sass {
+  color: #cc6698;
+}
+
+.fa-times-circle, .fa-chevron-left, .fa-chevron-right{
+  color: $darkColor;
+  padding: 0.7rem;
+  width: 3rem;
+  width: 3rem;
+  border-radius: 0.8rem;
+
+  &:hover{
+    background-color: rgba(0,0,0,0.2);
+  }
+}
+
+
 .section__title {
-  font-size: 7.5rem;
-  color: rgba(0, 149, 250, 0.3);
+  font-size: $font-xlg;
+  color: $darkerColor;
   padding-bottom: 0;
+  font-weight: 700;
 
   @include breakpoint-down(small) {
     font-size: 4rem;
@@ -72,7 +111,7 @@ textarea {
 
 .primary-btn {
   border: 2px solid $lightBlue;
-  border-radius: 10px;
+  border-radius: 5px;
   background: $lightBlue;
   transition: all 200ms ease-in-out;
 
@@ -88,8 +127,7 @@ textarea {
 }
 
 .secondary-btn {
-  border: 2px solid $lightBlue;
-  border-radius: 10px;
+  border: 1px solid $lightBlue;
   transition: all 200ms ease-in-out;
 
   @include breakpoint-up(large) {

@@ -1,5 +1,11 @@
 .header {
   color: $lightColor;
+  background: linear-gradient(115deg, $darkColor, $darkerColor);
+  height: 100vh;
+
+  @include breakpoint-browser-shrinking(medium){
+    height: 100%;
+  }
 
   &__top {
     @include justify(space-between);
@@ -15,9 +21,10 @@
       height: 4rem;
     }
 
-    > h1 {
-      font-size: $font-lg;
+    > span {
+      font-size: $font-med;
       margin-left: 1rem;
+      font-weight: 700;
 
       @include breakpoint-down(small) {
         font-size: 0.9rem;
@@ -64,10 +71,10 @@
   }
 
   &__navbar {
-    width: 27rem;
+    width: 18.625rem;
     height: 2.5rem;
     display: block;
-    font-size: $font-lg;
+    font-size: $font-sm;
     @include justify(space-between);
 
     @include breakpoint-down(medium) {
@@ -76,9 +83,9 @@
 
     > .btn {
       @include justify(center);
-      width: 9rem;
-      height: 2.5rem;
-      font-size: $font-lg;
+      width: 4.0625rem;
+      height: 1.875rem;
+      font-size: $font-sm;
     }
 
     a {
@@ -121,7 +128,7 @@
       @include justify(center);
       width: 9rem;
       height: 2.5rem;
-      font-size: $font-lg;
+      font-size: $font-sm;
     }
   }
 }

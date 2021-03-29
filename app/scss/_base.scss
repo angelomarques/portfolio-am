@@ -1,12 +1,16 @@
 //colors
-$grayish: #484e5a;
-$darkGray: #3b3e4e;
-$lightColor: #f7f9ff;
-$darkColor: #1c222c;
-$lightBlue: rgb(0, 149, 250);
+$grayish: hsl(204,5,45);
+$lightColor: hsl(204,98,98);
+$darkColor: hsl(204,98,15);
+$darkerColor: hsl(204,98,10);
+$lightBlue: hsl(204,98,45);
+$lighterBlue: hsl(204,98,85);
 
 //font sizes
-$font-lg: 1.2rem;
+$font-xlg: 2rem;// 32px
+$font-lg: 1.5rem;// 24px
+$font-med: 1.25rem;// 20px
+$font-sm: 1rem;
 
 //breakpoints
 $breakpoints-up: (
@@ -17,7 +21,7 @@ $breakpoints-up: (
 
 // 639px, 1023px, 1399px
 $breakpoints-down: (
-  "xsmall": "320px",
+  "xsmall": "450px",
   "small": "39.9375em",
   "medium": "63.9375em",
   "large": "87.4375em",
@@ -31,6 +35,12 @@ $breakpoints-down: (
 
 @mixin breakpoint-down($size) {
   @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-browser-shrinking($size){
+  @media (min-width: map-get($breakpoints-down, $size)) and (max-height: 460px){
     @content;
   }
 }

@@ -1,25 +1,20 @@
 .hero {
   @include justify(space-between);
-  margin-top: 4rem;
+  height: 100%;
   color: $lightColor;
 
-  @include breakpoint-down(medium) {
-    flex-direction: column;
-    align-items: start;
-
-    &__content {
-      padding-bottom: 6rem;
-    }
-  }
-
   &__content {
+    @include breakpoint-up(large) {
+      padding-right: 4rem;
+    }
+
     h1 {
-      font-size: 3.125rem;
+      font-size: $font-xlg;
       margin-bottom: 1.25rem;
     }
 
     p {
-      font-size: 1.5rem;
+      font-size: $font-sm;
       margin-bottom: 3.75rem;
       opacity: 0.7;
       position: relative;
@@ -30,9 +25,9 @@
         background-image: url("/images/smile-emoji.svg");
         background-repeat: no-repeat;
         background-size: cover;
-        width: 1.25rem;
-        height: 1.25rem;
-        bottom: 5px;
+        width: 1rem;
+        height: 1rem;
+        bottom: 0;
         margin-left: 5px;
       }
     }
@@ -41,14 +36,43 @@
   &__cta {
     width: 12.5rem;
     height: 3.125rem;
-    font-size: 1.5rem;
+    font-size: $font-lg;
 
-    @include justify(center)
+    @include justify(center);
   }
 
   &__image {
+    width: 35rem;
+
     > img {
       width: 100%;
+    }
+  }
+
+  @include breakpoint-down(medium) {
+    flex-direction: column-reverse;
+    align-items: start;
+    justify-content: center;
+
+    &__image{
+      margin-top: 1.5rem;
+      width: 30rem;
+    }
+
+    &__content {
+      padding-top: 3.5rem;
+    }
+  }
+
+  @include breakpoint-down(small){
+    &__image{
+      width: 100%;
+    }
+
+    &__content{
+      p{
+        margin-bottom: 2rem;
+      }
     }
   }
 }

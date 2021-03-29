@@ -2,17 +2,16 @@
   &__content {
     display: flex;
     align-items: center;
-
-    @include breakpoint-down(medium) {
-      flex-direction: column;
-    }
+    margin-top: 4rem;
   }
 
   &__text {
+    flex: 1;
     padding-right: 2.5rem;
 
     p {
-      color: $lightColor;
+      color: $grayish;
+      font-weight: lighter;
       font-size: 1rem;
       line-height: 1.5;
       padding-bottom: 2rem;
@@ -20,13 +19,32 @@
   }
 
   &__img {
+    flex: 1;
     padding-bottom: 2.25rem;
-    > img {
-      width: 35rem;
+    width: 35rem;
 
-      @include breakpoint-down(small) {
-        width: 100%;
-      }
+    > img {
+      width: 100%;
+    }
+  }
+
+  @include breakpoint-down(medium) {
+    &__content {
+      flex-direction: column-reverse;
+    }
+    &__text {
+      margin-top: 1.5rem;
+      padding-right: 0;
+    }
+
+    &__img {
+      width: 25rem;
+    }
+  }
+
+  @include breakpoint-down(small) {
+    &__img {
+      width: 100%;
     }
   }
 }

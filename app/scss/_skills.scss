@@ -16,38 +16,14 @@
   &__item {
     @include justify(center);
     flex-direction: column;
-    font-size: 1rem;
-    color: $lightColor;
+    font-size: $font-sm;
+    font-weight: 600;
+    color: $darkColor;
     margin-right: 2rem;
-
-    > p {
-      opacity: 0.8;
-    }
   }
 
   &__img {
     width: 3.5rem;
     object-fit: cover;
   }
-}
-
-//color for the skills images
-.fa-html5 {
-  color: #e44d26;
-}
-
-.fa-css3-alt {
-  color: #0277bd;
-}
-
-.fa-js-square {
-  color: #f7df1e;
-}
-
-.fa-react {
-  color: #61dafb;
-}
-
-.fa-sass {
-  color: #cc6698;
 }

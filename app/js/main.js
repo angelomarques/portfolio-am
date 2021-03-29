@@ -7,6 +7,7 @@ const closeNavbar = () => {
   menuBtn.classList.remove("active");
   overlay.classList.add("fade-out");
   overlay.classList.remove("fade-in");
+  document.body.style.overflowY = 'visible';
   setTimeout(() => {
     overlay.classList.remove("fade-out");
   }, 300);
@@ -19,6 +20,7 @@ menuBtn.addEventListener("click", () => {
     menuBtn.classList.add("active");
     overlay.classList.remove("fade-out");
     overlay.classList.add("fade-in");
+    document.body.style.overflowY = 'hidden';
   }
 });
 
@@ -28,24 +30,7 @@ navbarLink.forEach((link) => {
   });
 });
 
-// const projectItem = document.querySelectorAll(".projects__item");
-
-// projectItem.forEach((item) => {
-//   item.addEventListener("mouseover", () => {
-//     item.classList.add("hover");
-//   });
-
-//   item.addEventListener("mouseout", () => {
-//     item.classList.remove("hover");
-//   });
-// });
-
 const contactForm = document.querySelector(".contact__form");
-
-// contactForm.addEventListener("submit", (e) => {
-//   e.preventDefault();
-//   console.log('submited')
-// });
 
 //this resize the textarea
 const textarea = document.querySelector(".contact__form textarea");
@@ -55,7 +40,7 @@ textarea.addEventListener("input", () => {
     textarea.style.height = textarea.scrollHeight + "px";
   }
 
-  console.log(textarea.scrollHeight)
+  //console.log(textarea.scrollHeight)
   // //this if statement sets the correct height when the text is erased it
   // if (textarea.scrollHeight % 26 != 0) {
   //   for (let i = 2; i < 10; i++) {
